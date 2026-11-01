@@ -19,7 +19,7 @@
 
 ---
 
-Dune Pulse shows your expedition at a glance while you play: your vitals, the vehicle you're in, your bases and their power, the Coriolis storm, and what you last did with each character. It reads values from the running game on your own PC. It never changes the game, sends no input and uploads nothing.
+Dune Pulse shows your expedition at a glance while you play: your vitals, the vehicle you're in, your bases and their power, the Coriolis storm, and what you last did with each character. An optional overlay can show them over the game. It reads values from the running game on your own PC. It never changes the game, sends no input and uploads nothing.
 
 This repository is where Dune Pulse is **downloaded** and where you **report problems and ideas**. The source code is kept in a separate repository.
 
@@ -58,13 +58,15 @@ Dune Pulse checks for new versions about a minute after it starts and then daily
 
 ## What it reads, and what it never does
 
-**It reads only what the dashboard shows, about you:**
+**It reads only what the dashboard and the overlay show, about you:**
 
-- your character: health, water, stamina, energy, heat, cold, spice, armor, radiation protection, position, map and heading; on the main menu, your character's name, level, world, sietch and faction;
+- your character: health, water, stamina, energy, heat, cold, spice, armor, radiation protection, whether your shield is on, your radiation zone and meter, what you're holding (to tell when you're in build mode), position, map and heading; on the main menu, your character's name, level, world, sietch and faction;
 - the vehicle you're in: hull, temperature, fuel, modules and speed;
 - your world: time of day, Coriolis storm timing, the server and region;
 - your bases: power, water, shields, claim size, power-down timer and generators;
 - a base blueprint, only when you click **Export base**, saved where you choose.
+
+**The overlay** is off until you turn it on. It's a see-through window of Dune Pulse's own, drawn over the game: nothing is added to the game, clicks pass through it, and it shows only values Dune Pulse already has. While it's on, Ctrl+Shift+F10 edits its layout and Ctrl+Shift+F11 shows or hides it, even with the game in front.
 
 **It never:**
 
@@ -73,7 +75,7 @@ Dune Pulse checks for new versions about a minute after it starts and then daily
 - reads your **accounts**, passwords, chat or Steam login;
 - **uploads** anything: there's no telemetry or analytics.
 
-**What stays on your PC:** your settings and, unless you turn it off in **About › Characters**, a memory of your characters (level, world, last place, bases and recent sessions) in `%LOCALAPPDATA%\DunePulse`. Setup logs are in `%ProgramData%\DunePulse\Setup`.
+**What stays on your PC:** your settings, the overlay's layout and, unless you turn it off in **About › Characters**, a memory of your characters (level, world, last place, bases and recent sessions) in `%LOCALAPPDATA%\DunePulse`. Setup logs are in `%ProgramData%\DunePulse\Setup`.
 
 **What it downloads:** update checks and the signed list of approved Dune Pulse builds from `cdn.ferretech.org`, and, only if you agree while installing, Microsoft's .NET runtime from Microsoft. None of these carries your account, character, server or PC details.
 
@@ -98,6 +100,6 @@ Please leave out personal details: character and account names, server names you
 
 ## Credits and names
 
-Built by FerreTech Interactive LLC in partnership with [Red-Blink](https://github.com/Red-Blink), originator of the [DuneDocker.app](https://dunedocker.app) community project. The Dune Docker name and logo are used with permission.
+Copyright © 2026 Red-Blink and FerreTech Interactive LLC, with contributors. The driver and the background service are by FerreTech Interactive LLC. Published by FerreTech Interactive LLC.
 
-"Dune Pulse" and "FerreTech Interactive" are names of FerreTech Interactive LLC. *Dune: Awakening* is a trademark of its respective owner. Licensing and third-party notices are in [LICENSE.md](LICENSE.md).
+Built in partnership with [Red-Blink](https://github.com/Red-Blink), originator of the [DuneDocker.app](https://dunedocker.app) community project. "FerreTech Interactive" is a name of FerreTech Interactive LLC. *Dune: Awakening* is a trademark of its respective owner. Licensing and third-party notices are in [LICENSE.md](LICENSE.md).
