@@ -11,6 +11,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-Windows%2011%20x64-0078D4" alt="Platform: Windows 11 x64">
+  <a href="#requirements"><img src="https://img.shields.io/badge/Requires-.NET%20Desktop%20Runtime%2010-512BD4" alt="Requires: .NET Desktop Runtime 10"></a>
   <img src="https://img.shields.io/badge/Driver-Attestation--signed-2EA043" alt="Driver: attestation-signed">
   <img src="https://img.shields.io/badge/HVCI-Compatible-2EA043" alt="HVCI: compatible">
   <img src="https://img.shields.io/badge/Telemetry-Local%20only-2EA043" alt="Telemetry: local only">
@@ -45,7 +46,7 @@ Don't run a Dune Pulse setup from anywhere else, and don't run one whose signatu
 
 - Windows 11, 64-bit (x64).
 - Administrator approval once, while installing. Dune Pulse itself runs as you, without administrator rights.
-- Microsoft's .NET Desktop Runtime 10. If it's missing, setup offers to download it from Microsoft and installs it for you.
+- Microsoft's .NET Desktop Runtime 10. You don't need to install it first: if it's missing, setup offers to download it from Microsoft and installs it for you.
 - Memory Integrity (HVCI) and Secure Boot can stay on: the driver is signed by Microsoft.
 
 ## Install, use and remove
@@ -63,6 +64,7 @@ Dune Pulse checks for new versions about a minute after it starts and then daily
 - your character: health, water, stamina, energy, heat, cold, spice, armor, radiation protection, whether your shield is on, your radiation zone and meter, what you're holding (to tell when you're in build mode), position, map and heading; on the main menu, your character's name, level, world, sietch and faction;
 - the vehicle you're in: hull, temperature, fuel, modules and speed;
 - your world: time of day, Coriolis storm timing, the server and region;
+- your session: whether you're on the menu, in single player, or on an official or custom server, from two markers in the game's own log file (it keeps nothing else from the log), and whether BattlEye is running, from the names of running programs;
 - your bases: power, water, shields, claim size, power-down timer and generators;
 - a base blueprint, only when you click **Export base**, saved where you choose.
 
@@ -95,7 +97,7 @@ Please leave out personal details: character and account names, server names you
 
 ## Things to know
 
-- Dune Pulse is an **unofficial community tool**. It isn't affiliated with or endorsed by Funcom. It never changes the game, but its standing with the game's anti-cheat is still being confirmed, so use it at your own discretion.
+- Dune Pulse is an **unofficial community tool**. It isn't affiliated with or endorsed by Funcom. It never changes the game. Neither Funcom nor BattlEye, the game's anti-cheat, has an official position on it, so use it at your own discretion.
 - It's in **beta**: expect rough edges, and some values may be missing for a while after a game patch.
 
 ## Credits and names
