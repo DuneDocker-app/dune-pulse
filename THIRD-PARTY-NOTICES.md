@@ -1,12 +1,23 @@
 # Third-party notices
 
-Dune Pulse includes, or is based on, the third-party work listed below, under that work's own license.
+Dune Pulse is published by FerreTech Interactive LLC under its own terms ([LICENSE.md](https://github.com/DuneDocker-app/dune-pulse/blob/main/LICENSE.md)). It includes, or is based on, the third-party work listed below, under that work's own license.
 
 ## Red-Blink developer handoff (the earlier Dune Pulse codebase)
 
-- **Source:** the Dune Pulse developer handoff from [Red-Blink](https://github.com/Red-Blink), part of the [DuneDocker.app](https://dunedocker.app) family.
+- **Source:** the Dune Pulse developer handoff from [Red-Blink](https://github.com/Red-Blink), part of the [DuneDocker.app](https://dunedocker.app) family. It is kept as a reference copy and isn't published.
 - **License:** MIT (below).
-- **What is used:** the design of the local crash log, and property names from its research profile, used as leads for reading the game.
+- **What is used:**
+
+| In Dune Pulse | From the handoff | How |
+| --- | --- | --- |
+| `src/Pulse.Contracts/CrashLog.cs` (local crash log) | `CrashReporter` | Design followed; code written for Dune Pulse |
+| `docs/GAME-TELEMETRY.md` (attribute-set leads) | Research profile for game build 1.4.10.0 | Property names used as research leads |
+| `src/DunePulse/Overlay/OverlayWindow.xaml(.cs)` | `OverlayWindow` | Adapted |
+| `src/DunePulse/Overlay/WidgetHost.xaml(.cs)` | `WidgetHost` | Adapted |
+| `src/DunePulse/Overlay/OverlayLayout.cs` | `OverlayLayout`, `LayoutStore` | Adapted |
+| `src/DunePulse/Overlay/GameWindowTracker.cs` | `GameWindowTracker` | Design followed; code written for Dune Pulse |
+
+Files ported from the handoff are added to this table with "Ported" or "Adapted". Each ported file also keeps a short header naming the handoff and this notice.
 
 ```
 MIT License
