@@ -1,0 +1,40 @@
+name: Journey data out of date
+description: "Dune Pulse locked journey and contract edits after a Dune: Awakening patch."
+title: "[Journey data] "
+labels: [journey-data]
+type: Game update
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Dune Pulse's journey and contract edits use data made from the game's own files. After a patch it checks that data against your installed game, and locks the edits it can no longer vouch for, so nothing wrong is written to your save. That's expected and safe; this report helps us update the data quickly.
+
+        Use **Report this** in Dune Pulse (TOOLS › Save edits › Journeys and contracts): it fills in the report below. Before submitting, check whether an issue already exists for the same game build and add to it instead.
+
+        The report holds only version numbers, the game's own journey and contract names, and file hashes. Leave out character and account names, and never attach your save.
+  - type: textarea
+    id: report
+    attributes:
+      label: Report from Dune Pulse
+      description: Filled in by **Report this**. You can also paste it from **Copy report**.
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: patch
+    attributes:
+      label: Game patch
+      description: "The patch name or date, if you know it."
+      placeholder: "Patch of 2026-11-25"
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else
+      description: "Optional: which journey or contract you were trying to change. No names, please."
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked for an existing issue for this game build, and removed any personal details.
+          required: true
