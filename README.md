@@ -5,7 +5,7 @@
 <h1 align="center">Dune Pulse</h1>
 
 <p align="center">
-  A read-only, local telemetry companion for <em>Dune: Awakening</em>.<br>
+  A local telemetry companion for <em>Dune: Awakening</em>: read-only online, with optional single-player tools.<br>
   A tool in the <a href="https://dunedocker.app">DuneDocker.app</a> family.
 </p>
 
@@ -20,7 +20,7 @@
 
 ---
 
-Dune Pulse shows your expedition at a glance while you play: your vitals, the vehicle you're in, your bases and their power, the Coriolis storm, and what you last did with each character. An optional overlay can show them over the game. It reads values from the running game on your own PC. It never changes the game, sends no input and uploads nothing.
+Dune Pulse shows your expedition at a glance while you play: your vitals, the vehicle you're in, your bases and their power, the Coriolis storm, and what you last did with each character. An optional overlay can show them over the game. It reads values from the running game on your own PC. Online, with BattlEye running, it only reads and doesn't change the game. It sends no input and uploads nothing. In single player, its optional tools can edit your save, after backing it up, and load a small helper into the game with BattlEye off ([single-player tools](#single-player-tools)).
 
 This repository is where Dune Pulse is **downloaded** and where you **report problems and ideas**. The source code is kept in a separate repository.
 
@@ -66,14 +66,16 @@ Dune Pulse checks for new versions about a minute after it starts and then daily
 - your world: time of day, Coriolis storm timing, the server and region;
 - your session: whether you're on the menu, in single player, or on an official or custom server, from two markers in the game's own log file (it keeps nothing else from the log), and whether BattlEye is running, from the names of running programs;
 - your bases: power, water, shields, claim size, power-down timer and generators;
-- a base blueprint, only when you click **Export base**, saved where you choose.
+- a base blueprint, only when you click **Export base**, saved where you choose;
+- in single player, your save (`game.db`) from your own Windows user's game folder, at the menu or with the game closed, for the progression, map and single-player tools pages. It never reads the save's platform account identifiers.
 
 **The overlay** is off until you turn it on. It's a see-through window of Dune Pulse's own, drawn over the game: nothing is added to the game, clicks pass through it, and it shows only values Dune Pulse already has. While it's on, Ctrl+Shift+F10 edits its layout and Ctrl+Shift+F11 shows or hides it, even with the game in front.
 
 **It never:**
 
 - shows or stores anything about **other players**;
-- **changes the game**, sends keyboard or mouse input, or automates anything;
+- **changes the game online**: with BattlEye running it only reads (the [single-player tools](#single-player-tools) are the only exception, and only in single player);
+- sends keyboard or mouse input, or automates anything;
 - reads your **accounts**, passwords, chat or Steam login;
 - **uploads** anything: there's no telemetry or analytics.
 
@@ -81,7 +83,14 @@ Dune Pulse checks for new versions about a minute after it starts and then daily
 
 **What it downloads:** update checks and the signed list of approved Dune Pulse builds from `cdn.ferretech.org`, and, only if you agree while installing, Microsoft's .NET runtime from Microsoft. None of these carries your account, character, server or PC details.
 
-**How it's protected:** a small Microsoft-signed driver copies values out of the game for Dune Pulse's background service, and serves nothing else. It accepts only Dune Pulse's own signed programs, listed by exact file fingerprint in a list signed by FerreTech that expires every 30 days. The service talks only to the Windows user who installed Dune Pulse, reads only the Dune: Awakening process in your own session, and only for game versions it recognizes.
+**How it's protected:** a small Microsoft-signed driver copies values out of the game for Dune Pulse's background service, and serves nothing else. It accepts only Dune Pulse's own signed programs, listed by exact file fingerprint in a list signed by FerreTech that expires every 30 days. The service talks only to the Windows user who installed Dune Pulse, reads only the Dune: Awakening process in your own session, and only for game versions it recognizes. The optional live helper is signed by FerreTech Interactive LLC; setup checks its fingerprint and signer like the programs and installs it in a folder only administrators can change, and Dune Pulse checks that BattlEye isn't running before loading it.
+
+### Single-player tools
+
+These change something only in single player, and only when you use them:
+
+- **Save edits and restores** (such as Refill and repair, save teleport, land claim, or putting a backup back) write to your single-player save (`game.db`). They run only with the game closed, or at the menu once the game has finished saving. Dune Pulse first backs up your save as it is, checks the change on a working copy, then replaces the save in one step. Backups stay in `%LOCALAPPDATA%\DunePulse\Saves\Backups`.
+- **The live tools** (`PulseLive.dll`, for live teleport and travel) are offered by setups that carry them, unticked on a first install. When installed, Dune Pulse loads this small signed helper into the game only in eligible single-player sessions with BattlEye off, and it refuses to run if BattlEye is there. Leave it off if you play on servers only.
 
 ## Reporting a problem or an idea
 
@@ -97,7 +106,7 @@ Please leave out personal details: character and account names, server names you
 
 ## Things to know
 
-- Dune Pulse is an **unofficial community tool**. It isn't affiliated with or endorsed by Funcom. It never changes the game. Neither Funcom nor BattlEye, the game's anti-cheat, has an official position on it, so use it at your own discretion.
+- Dune Pulse is an **unofficial community tool**. It isn't affiliated with or endorsed by Funcom. Online, with BattlEye running, Dune Pulse only reads and doesn't change the game. In single player, the optional save edits write to your save after backing it up, and the optional live helper (`PulseLive.dll`, unticked on a first install) loads into the game only in eligible single-player sessions with BattlEye off. Neither Funcom nor BattlEye, the game's anti-cheat, has an official position on it, so use it at your own discretion.
 - It's in **beta**: expect rough edges, and some values may be missing for a while after a game patch.
 
 ## Credits and names
