@@ -55,7 +55,7 @@ Don't run a Dune Pulse setup from anywhere else, and don't run one whose signatu
 2. Start **Dune Pulse**. It connects to the game by itself when Dune: Awakening is running, and reconnects after a drop.
 3. To remove it: **Settings → Apps → Dune Pulse → Uninstall**. This removes the app, its background service, the driver, the renewal task and its files. You can keep or delete your settings and remembered characters.
 
-Dune Pulse checks for new versions about a minute after it starts and then daily. You can turn this off in **About**.
+Dune Pulse checks for new versions about a minute after it starts and then daily. You can turn this off in **Settings**.
 
 ## What it reads, and what it never does
 
@@ -79,7 +79,7 @@ Dune Pulse checks for new versions about a minute after it starts and then daily
 - reads your **accounts**, passwords, chat or Steam login;
 - **uploads** anything: there's no telemetry or analytics.
 
-**What stays on your PC:** your settings, the overlay's layout and, unless you turn it off in **About › Characters**, a memory of your characters (level, world, last place, bases and recent sessions) in `%LOCALAPPDATA%\DunePulse`. Setup logs are in `%ProgramData%\DunePulse\Setup`.
+**What stays on your PC:** your settings, the overlay's layout and, unless you turn it off in **Settings › Characters**, a memory of your characters (level, world, last place, bases and recent sessions) in `%LOCALAPPDATA%\DunePulse`. Setup logs are in `%ProgramData%\DunePulse\Setup`.
 
 **What it downloads:** update checks and the signed list of approved Dune Pulse builds from `cdn.ferretech.org`, and, only if you agree while installing, Microsoft's .NET runtime from Microsoft. None of these carries your account, character, server or PC details.
 
