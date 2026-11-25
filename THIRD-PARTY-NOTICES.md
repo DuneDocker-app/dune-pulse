@@ -10,7 +10,7 @@ The Windows bindings built into the app for the Blueprints 3D view (`Microsoft.W
 
 ## Blueprint Studio renderer (TOOLS › Blueprints, 3D view)
 
-The 3D view shows bases with Blueprint Studio's renderer and page script, as built for the Dune Docker Blueprint Installer (`src/DunePulse/Assets/BlueprintViewer/studio-viewer.js`, unchanged but for one line added at the end that hands Dune Pulse's page the renderer, and its storey lookup cached for Dune Pulse's read-only view so that large bases load faster; where it came from is in the README beside it). Blueprint Studio and the installer are part of the Dune Docker project, by Red-Blink, the same project as Dune Pulse; their use here was agreed on 2026-11-25. The renderer downloads each piece's model from blueprints.dunedocker.app only after you turn the 3D view on.
+The 3D view shows bases with Blueprint Studio's renderer and page script, as built for the Dune Docker Blueprint Installer (`src/DunePulse/Assets/BlueprintViewer/studio-viewer.js`, unchanged but for one line added at the end that hands Dune Pulse's page the renderer, its storey lookup cached for Dune Pulse's read-only view so that large bases load faster, and its walk mode turned on for that view; where it came from is in the README beside it). Blueprint Studio and the installer are part of the Dune Docker project, by Red-Blink, the same project as Dune Pulse; their use here was agreed on 2026-11-25. The renderer downloads each piece's model from blueprints.dunedocker.app only after you turn the 3D view on.
 
 It includes three.js, whose notice is kept inline in that file:
 
